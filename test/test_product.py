@@ -6,7 +6,6 @@ def test_init(product_one):
     assert product_one.price == 210000.0
     assert product_one.quantity == 8
 
-
 def test_products(product_two):
     assert product_two.name == "Samsung Galaxy S23 Ultra"
     assert product_two.description == "256GB, Серый цвет, 200MP камера"
