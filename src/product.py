@@ -16,7 +16,7 @@ class Product:
     @classmethod
     def new_product(
         cls, product_data
-    ):  # Класс-метод для получения значений из словаря по ключу
+    ):  #Класс-метод для получения значений из словаря по ключу
         name = product_data["name"]
         description = product_data["description"]
         price = product_data["price"]
