@@ -13,7 +13,7 @@ class Category:
         self.description = description
         self.__products = products
 
-        Category.product_count += len(products)  # счетчик категорий и товаров.
+        Category.product_count += len(products)  #счетчик категорий и товаров.
         Category.category_count += 1
 
     def add_product(self, product):
