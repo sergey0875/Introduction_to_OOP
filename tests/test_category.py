@@ -20,3 +20,9 @@ def test_add_product(category_one, product_one):
 
     assert len(category_one._Category__products) == 4
     assert Category.product_count == initial_count + 1
+
+
+
+def test_category_str(category_one):
+    """Тестирование магического метода __str__"""
+    assert str(category_one) == "Смартфоны, количество продуктов: 27 шт."
