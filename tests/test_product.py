@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.product import Product
 
 
@@ -10,6 +8,7 @@ def test_init(product_one):
     assert product_one.description == "512GB, Gray space"
     assert product_one.price == 210000.0
     assert product_one.quantity == 8
+
 
 def test_products(product_two):
     assert product_two.name == "Samsung Galaxy S23 Ultra"
@@ -31,10 +30,9 @@ def test_price_zero(product_one):
 def test_product_total_sum():
     """Тестирование магического метода __add__"""
     p1 = Product("iPhone", "Apple phone", 100.0, 5)  # 100 * 5 = 500
-    p2 = Product("Samsung", "Android phone", 200.0, 2) # 400
+    p2 = Product("Samsung", "Android phone", 200.0, 2)  # 400
 
     assert p1 + p2 == 900.0
-
 
 
 def test_str(product_one):

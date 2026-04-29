@@ -1,8 +1,3 @@
-from itertools import product
-
-
-
-
 class Product:
     """Класс для представления продукта."""
 
@@ -19,18 +14,19 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if type(other) is Product: # Проверяем тип класса. Если класс другой возбуждаем исключение
+        if (
+            type(other) is Product
+        ):  # Проверяем тип класса. Если класс другой возбуждаем исключение
             return (self.price * self.quantity) + (other.price * other.quantity)
         raise TypeError
-
 
     @classmethod
     def new_product(
         cls, product_data
-    ):  #Класс-метод для получения значений из словаря по ключу
+    ):  # Класс-метод для получения значений из словаря по ключу
         name = product_data["name"]
         description = product_data["description"]
         price = product_data["price"]
@@ -47,11 +43,7 @@ class Product:
 
         # Сеттер для проверки цены
         if new_price <= 0:
-              print("Цена не должна быть нулевая или отрицательная")
+            print("Цена не должна быть нулевая или отрицательная")
 
         else:
             self.__price = new_price
-
-
-
-
