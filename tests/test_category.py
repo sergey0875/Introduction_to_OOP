@@ -1,5 +1,6 @@
 from src.category import Category
 
+
 def test_init_two(category_one):
     """Тестирование класса Category"""
     assert category_one.name == "Смартфоны"
@@ -20,7 +21,6 @@ def test_add_product(category_one, product_one):
 
     assert len(category_one._Category__products) == 4
     assert Category.product_count == initial_count + 1
-
 
 
 def test_category_str(category_one):

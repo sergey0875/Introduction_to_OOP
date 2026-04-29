@@ -1,30 +1,24 @@
-from itertools import product
-
-from src.category import Category
-from src.product import Product
-
-
 class ProductIterator:
 
     def __init__(self, user_obj):
         self.user_obj = user_obj
         self.index = 0
 
-
     def __iter__(self):
         self.index = 0
         return self
 
-
     def __next__(self):
 
-        if self.index < len(self.user_obj._Category__products ):
-            product = self.user_obj._Category__products [self.index]
+        if self.index < len(self.user_obj._Category__products):
+            product = self.user_obj._Category__products[self.index]
 
             self.index += 1
-            return  product
+            return product
         else:
             raise StopIteration
+
+
 #
 # if __name__=='__main__':
 #     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
@@ -53,6 +47,3 @@ class ProductIterator:
 #
 #     for product in iterator:
 #         print(product)
-
-
-

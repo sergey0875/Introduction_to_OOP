@@ -1,5 +1,6 @@
 import pytest
 
+
 def test_product_iterator(product_iterator):
     """Тестирование класса ProductIterator"""
     iter(product_iterator)
@@ -8,5 +9,5 @@ def test_product_iterator(product_iterator):
     assert next(product_iterator).name == "Iphone 15"
     assert next(product_iterator).name == "Xiaomi"
 
-    with pytest.raises(StopIteration): # Тестируем возбуждение исключения
+    with pytest.raises(StopIteration):  # Тестируем возбуждение исключения
         next(product_iterator)

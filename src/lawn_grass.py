@@ -2,18 +2,19 @@ from src.product import Product
 
 
 class LawnGrass(Product):
-    """ Класс Трава газонная от родительского класса Product """
+    """Класс Трава газонная от родительского класса Product"""
 
-    def __init__(self, country, germination_period, color, name, description, price, quantity):
-         super().__init__(name, description, price, quantity)
-         self.country = country
-         self.germination_period = germination_period
-         self.color = color
+    def __init__(
+        self, name, description, price, quantity, country, germination_period, color
+    ):
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
 
     def __add__(self, other):
-        if type(other) is LawnGrass:  # Проверяем тип класса. Если класс другой возбуждаем исключение
+        if (
+            type(other) is LawnGrass
+        ):  # Проверяем тип класса. Если класс другой возбуждаем исключение
             return (self.price * self.quantity) + (other.price * other.quantity)
         raise TypeError
-
-
-

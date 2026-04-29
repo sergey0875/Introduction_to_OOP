@@ -64,6 +64,10 @@ new_product() с помощью декоратора
 
 1. product.py
 2. category.py
+3. lan_grass.py
+4. product_iterator.py
+5. smartphone.py
+6. utils.py
 
 
 ### Запуск тестов
