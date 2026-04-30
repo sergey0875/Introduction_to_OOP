@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import Mixin
+
+
+class Product(BaseProduct, Mixin):
     """Класс для представления продукта."""
 
     name: str
@@ -8,10 +12,12 @@ class Product:
 
     def __init__(self, name, description, price, quantity):
         """Метод для инициализации экземпляра класса. Задаем значения атрибутам экземпляра."""
+
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
