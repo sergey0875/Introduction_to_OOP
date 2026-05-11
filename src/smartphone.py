@@ -22,8 +22,6 @@ class Smartphone(Product):
         self.color = color
 
     def __add__(self, other):
-        if (
-            type(other) is Smartphone
-        ):  # Проверяем тип класса. Если класс другой возбуждаем исключение
+        if type(other) is Smartphone:  # Проверяем тип класса. Если класс другой возбуждаем исключение
             return (self.price * self.quantity) + (other.price * other.quantity)
         raise TypeError
