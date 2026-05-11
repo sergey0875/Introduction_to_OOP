@@ -26,3 +26,14 @@ def test_add_product(category_one, product_one):
 def test_category_str(category_one):
     """Тестирование магического метода __str__"""
     assert str(category_one) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_middle_price(category_one):
+    """Вычисление средней суммы"""
+    assert category_one.middle_price() == 140333.33
+
+
+def test_middle_price_empty(category_zero):
+    """Тест проверка ZeroDivisionError"""
+
+    assert category_zero.middle_price() == 0

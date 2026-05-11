@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -38,3 +40,10 @@ def test_product_total_sum():
 def test_str(product_one):
     """Тестирование магического метода __str__"""
     assert str(product_one) == "Iphone 15, 210000.0 руб. Остаток: 8 шт."
+
+
+def test_product_quantity_zero():
+    """Тестирование на выдачу исключения при введении нулевого количества товара"""
+
+    with pytest.raises(ValueError):
+        _ = Product("Бракованный товар", "Неверное количество", 1000.0, 0)

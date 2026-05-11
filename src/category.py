@@ -1,3 +1,5 @@
+
+
 from src.product import Product
 
 
@@ -41,3 +43,13 @@ class Category:
             result += f"{str(product)}\n"
 
         return result
+
+    def middle_price(self):
+        """подсчитывает средний ценник всех товаров."""
+
+        try:
+
+            return round(sum(items.price for items in self.__products) / len(self.__products), 2)
+
+        except ZeroDivisionError:
+            return 0
